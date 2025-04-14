@@ -33,12 +33,14 @@ function checkApiKey(req, res, next) {
   next();
 }
 
-// Middleware
-app.use(cors({
-    origin: secureURL,  // Only allow requests from this URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // You can specify the methods you want to allow
-    credentials: true  // If you're using cookies, enable this to allow credentials
-}));
+// // Middleware
+// app.use(cors({
+//     origin: secureURL,  // Only allow requests from this URL
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // You can specify the methods you want to allow
+//     credentials: true  // If you're using cookies, enable this to allow credentials
+// }));
+
+app.use(cors())
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
